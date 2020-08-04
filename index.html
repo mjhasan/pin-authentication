@@ -82,12 +82,16 @@
                 document.getElementById('submitPin').addEventListener('click', function() {
                     let inputPin = document.getElementById('pinOutput').value;
                     let generatorOutput = document.getElementById('generatedPin').value;
-                    if (inputPin == generatorOutput) {
-                        document.getElementById('successPin').style.display = "block";
-                        document.getElementById('unsuccessPin').style.display = "none"
+                    if (generatorOutput > 0) {
+                        if (inputPin == generatorOutput) {
+                            document.getElementById('successPin').style.display = "block";
+                            document.getElementById('unsuccessPin').style.display = "none"
+                        } else {
+                            document.getElementById('unsuccessPin').style.display = "block";
+                            document.getElementById('successPin').style.display = "none";
+                        }
                     } else {
-                        document.getElementById('unsuccessPin').style.display = "block";
-                        document.getElementById('successPin').style.display = "none";
+                        alert("Generate pin number first!")
                     }
                 })
             </script>
